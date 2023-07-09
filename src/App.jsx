@@ -8,12 +8,14 @@ import DestinationDetails from "./pages/DestinationDetails.jsx";
 function App() {
 
   return (
-      <Routes>
-        <Route path={'/'} element={<Home/>} />
-        <Route path={'/countries'} element={<Countries/>} />
-        <Route path={'/destinations'} element={<Destinations/>} />
-        <Route path={'/destination-details'} element={<DestinationDetails/>} />
-      </Routes>
+      <div className={'app-main bg-black/90 text-white min-h-[100vh]'}>
+          <Routes>
+              <Route path={'/'} element={<Home/>} />
+              <Route path={'/:continentName/countries/:continentId'} element={<Countries/>} />
+              <Route path={'/:countryName/destinations/:countryId'} element={<Destinations/>} />
+              <Route path={'/destination-details'} element={<DestinationDetails/>} />
+          </Routes>
+      </div>
   )
 }
 
