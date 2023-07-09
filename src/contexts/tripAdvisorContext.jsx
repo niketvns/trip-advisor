@@ -6,16 +6,18 @@ const tripAdvisorContext = createContext()
 const TripAdvisorContextProvider = ({children}) => {
     const [tripData, setTripData] = useState(data.continents)
 
-    const findCountries = (continentId) => {
-        return tripData.find(continent => continent.id === Number(continentId)).countries
+    const findCountries = (continentName) => {
+        return tripData.find(continent => continent.name === continentName)
+    }
+
+    const findDestinations = (continentName, countryName) => {
+        return findCountries(continentName).countries.find(country => country.name === countryName)
     }
 
 
-    return(
-        <tripAdvisorContext.Provider value={{tripData, findCountries}}>
+    return (<tripAdvisorContext.Provider value={{tripData, findCountries, findDestinations}}>
             {children}
-        </tripAdvisorContext.Provider>
-    )
+        </tripAdvisorContext.Provider>)
 }
 
 const useGlobaltrips = () => useContext(tripAdvisorContext)

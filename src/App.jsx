@@ -11,8 +11,8 @@ function App() {
       <div className={'app-main bg-black/90 text-white min-h-[100vh]'}>
           <Routes>
               <Route path={'/'} element={<Home/>} />
-              <Route path={'/:continentName/countries/:continentId'} element={<Countries/>} />
-              <Route path={'/:countryName/destinations/:countryId'} element={<Destinations/>} />
+              <Route path={'/:continentName/countries'} element={<Countries/>} />
+              <Route path={'/:continentName/:countryName/destinations'} element={<Destinations/>} />
               <Route path={'/destination-details'} element={<DestinationDetails/>} />
           </Routes>
       </div>

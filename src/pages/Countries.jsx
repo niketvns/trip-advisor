@@ -3,10 +3,10 @@ import {useGlobaltrips} from "../contexts/tripAdvisorContext.jsx";
 import CountryCard from "../components/CountryCard.jsx";
 
 const Countries = () => {
-    const {continentId, continentName} = useParams()
+    const {continentName} = useParams()
     const {findCountries} = useGlobaltrips()
 
-    const countries = findCountries(continentId)
+    const continent = findCountries(continentName)
 
     return (
         <div className={'countries-main flex flex-col gap-8 items-center pt-12'}>
@@ -15,8 +15,8 @@ const Countries = () => {
             </header>
             <div className="all-continents flex flex-wrap gap-4">
                 {
-                    countries.map(country => (
-                        <CountryCard key={country.id} country={country}/>
+                    continent.countries.map(country => (
+                        <CountryCard key={country.id} continent={continent} country={country}/>
                     ))
                 }
             </div>
