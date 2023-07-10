@@ -47,7 +47,7 @@ const DestinationDetails = () => {
                         </p>
                         <p>
                             <span className={'text-blue-500'}>Website: </span>
-                            <Link to={destinationDetails.website} className={'underline'}>Link</Link>
+                            <Link to={destinationDetails.website} target={'_blank'} className={'underline'}>Link</Link>
                         </p>
                     </div>
                 </div>
