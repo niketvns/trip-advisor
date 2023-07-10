@@ -14,8 +14,12 @@ const TripAdvisorContextProvider = ({children}) => {
         return findCountries(continentName).countries.find(country => country.name === countryName)
     }
 
+    const findDestinationDetails = (continentName, countryName, destinationName) => {
+        return findDestinations(continentName, countryName).destinations.find(destination => destination.name === destinationName);
+    }
 
-    return (<tripAdvisorContext.Provider value={{tripData, findCountries, findDestinations}}>
+
+    return (<tripAdvisorContext.Provider value={{tripData, findCountries, findDestinations, findDestinationDetails}}>
             {children}
         </tripAdvisorContext.Provider>)
 }
